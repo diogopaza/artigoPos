@@ -1,6 +1,6 @@
 <h1>Artigo final Pós Graduação WEBDEV Alfa </h1>
 
-Instale o express com o comando a seguir:
+<p>Instale o express com o comando a seguir:</p>
 npm install express-generator -g
 
 Ferramenta geradora de aplicativos, express, para rapidamente criar uma estrutura básica de aplicativo
