@@ -117,4 +117,23 @@ Feito isso devemos mostrar ao express onde carregar nossas views
 app.set('views', './views')
 
 
+Dentro do modelo MVC temos o C de controller
+Então criaremos nossa pasta controller na raiz do nosso projeto
+E depois criaremos o arqui cadastrarEstadoController.js
+
+BODY-PARSER
+Dentro do nosso vamos precisar receber as informações vindas da nossa view
+Para atualizar nossos dados do model
+Para receber essas requisições precisamos instalar o modulo body-parser
+Que recebe as informações vindas pela metodo post e faz o tratamento delas
+
+Instalar móudlo
+
+npm install body-parser --save
+
+
+
+
+
+
 
