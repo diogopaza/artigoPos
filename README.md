@@ -37,20 +37,24 @@ nodemon nome.js
 No arquivo package.json podemos configurar nosso script start
 para que que com o comando npm start nossa aplicação inicie automaticamente com 
 o nodemon
+Nosso script start deve ficar assim
+ "start": "nodemon ./app"
 
 CONFIGURANDO NOSSO SERVIDOR
+Vamos criar uma pasta config e um arquivo server.js
+Neste arquivos estarão nossas configurações do servidor express
+e modulos de inicialização de nosso sistema
 
-arquivo index.js
+arquivo server.js
 
 const express = require('express')
 const app = express()
 
-const PORT = process.env.PORT || 3000
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na ${PORT}`)
-})
+app.use(express.static( './public'));
 
 module.exports = app
 
@@ -61,6 +65,35 @@ Nossa variavel express recebe o modulo express, logo abaixo executamos o módulo
 passando para a varável app
 Para finalizar usamos o metódo listen que passa a ouvir nosso servidor na porta desejada,
 retornando uma mensagem no nosso console.
+
+APP.JS
+
+Com nosso server criado vamos configurar o app.js
+Esse é o arquivo de entrada onde iniciamos nosso sistema
+
+var express = require('express');
+var app = require('./config/server')
+
+const PORT = process.env.PORT || 3000
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na ${PORT}`)
+})
+
+Como vemos acima basicamente ele recupera nosso server atraves da variavel app
+e inicializa nosso servidor na porta desejada.
+
+
+
+
+module.exports = app;
+
 
 
 ENGINE DE VIEW
