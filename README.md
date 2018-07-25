@@ -30,6 +30,39 @@ com isso qualquer um que baixar nosso projeto ou nos baixarmos em outra máquina
 quando atualizarmos nossos pacotes com o comando npm install, nosso gerenciador de pacotes já irá saber 
 que deve instalar o pacote do nodemon, neste caso.
 
+Comando para inicializar nosso aplicativo
+
+nodemon nome.js
+
+No arquivo package.json podemos configurar nosso script start
+para que que com o comando npm start nossa aplicação inicie automaticamente com 
+o nodemon
+
+CONFIGURANDO NOSSO SERVIDOR
+
+arquivo index.js
+
+const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 3000
+
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na ${PORT}`)
+})
+
+module.exports = app
+
+Como podemos ver no código acima com o Express
+fica muito fácil configurar nosso servidor para receber
+requisições HTTP
+Nossa variavel express recebe o modulo express, logo abaixo executamos o módulo 
+passando para a varável app
+Para finalizar usamos o metódo listen que passa a ouvir nosso servidor na porta desejada,
+retornando uma mensagem no nosso console.
+
+
 ENGINE DE VIEW
 São os mecanismos de modelo para renderizar nossas views com o Express
 
