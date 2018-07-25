@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        
+        img {
+        height: 75px;
+        border: 1px solid #000;
+        margin: 10px 15px 0 0 ;
+
+        }
+
+        ul{
+
+            list-style-type: none;
+
+        }
+
+
+
+
+
+
+        li{
+            display: inline;
+        }
+
+
+        .formEstados {
+            border:solid 1px black; 
+            width: 50%;
+            margin: 25px auto;
+        }
+
+        .divClientes{
+            border:solid 1px black; 
+            width: 50%;
+            margin: 25px auto;
+            
+        }
+        .divClientesDentro{
+
+            margin: 10px auto;
+            width: 50%;
+        }
+
+
+        #formCidades{
+            border: solid 1px black;
+            width: 50%;
+            margin: 25px auto;
+        }
+
+        #estiloClientes{
+            border: solid 1px black;
+            width: 50%;
+            margin: 25px auto;
+        }
+
+        .imgTeste{
+        width: 75px;
+        height: 75px;
+        border: 1px solid #000;
+       
+        }
+
+    }
+
+
+
+</style>
+</head>
+<body>
+
+    <form enctype="multipart/form-data" action="cadastrarEstado" method="POST" class="formEstados">
+        <div class="formEstados">
+             <h3>Cadastrar Estado</h3>
+        <div>
+            <input type="file" name="image" multiple >
+        </div>
+        <div>
+            <input name="nomeEstado" type="text" placeholder="Digite o nome do estado" required></input>
+        </div>
+
+
+        <div>
+            <input type="submit" name="uploadEstados" value="Upload Image" />
+        </div>
+        </div>
+       
+
+
+</form>
+
+
+    
+    
+
+</div>
+      
+</form>         
+                    
+
+        
+
+
+
+
+<script type="text/javascript">
+
+    var imgPrincipal;
+    var cont = 0;
+    var files;
+    var meucontador = 0;
+    var myIdBackup='';
+
+    if(window.XMLHttpRequest){
+        xmlhttpEstados = new XMLHttpRequest();
+           }   
+
+    xmlhttpEstados.onreadystatechange = function() {
+       
+            if (this.readyState == 4 && this.status == 200) {
+               
+                var classes = document.querySelectorAll('.selectEstados');
+                
+                for (var i = 0; i < classes.length; i++) {
+                   
+                    classes[i].innerHTML = this.responseText;
+                }
+
+                /*
+                document.querySelector('.selectEstados').innerHTML = this.responseText;
+                console.log('executei innerHTML');
+               */
+                
+            }
+        }
+
+     xmlhttpCidades.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               
+                var classes = document.querySelectorAll('#selectCidades');
+               
+                for (var i = 0; i < classes.length; i++) {
+                   
+                    classes[i].innerHTML = this.responseText;
+                }
+
+                /*
+                document.querySelector('.selectEstados').innerHTML = this.responseText;
+                console.log('executei innerHTML');
+               */
+                
+            }
+    }
+
+
+       
+        function drag(evt){
+           
+
+            
+            
+            evt.dataTransfer.setData('text',evt.target.id);
+            
+            evt.dataTransfer.setData('name',evt.target.name);
+            console.log(evt.target.name)
+            
+            
+        }
+
+        function over(evt){
+            evt.preventDefault();
+            
+        }
+
+     
+
+
+       
+      
+
+       function drop(evt){
+            
+            name = evt.dataTransfer.getData('name')
+            data = evt.dataTransfer.getData('text')
+            myElement = document.getElementById(data)
+           
+            
+            
+            minhaImg = evt.target.id;
+            minhaImgId = document.getElementById(minhaImg)
+            
+            
+            copiaImg = minhaImgId.src;
+            minhaImgId.src = myElement.src
+            myElement.src = copiaImg
+            
+            copiaName = minhaImgId.name
+            minhaImgId.name = name
+            myElement.name = copiaName
+
+            console.log(minhaImgId.name)
+            
+            imgPrincipal =   name
+            //console.log(imgPrincipal)
+            
+             
+
+          
+            
+
+         }
+
+            
+           
+           
+    
+
+
+       
+         myFiles = ''
+     
+   
+    function retornaImagensPrincipal(evt){
+        files = evt.target.files
+        reader = new FileReader()
+        console.log(files)
+
+        
+        reader.onload = (evt) =>{
+                    
+                    dataURL = evt.target.result 
+
+                    console.log(myFiles)
+                    novaImg = document.createElement('img')
+                    novaImg.src = dataURL
+                     document.getElementById('spanPrincipal').appendChild(novaImg)   
+                   
+                    }
+
+                    reader.readAsDataURL( files[0] )
+
+        
+        
+       
+    }
+
+
+
+
+    function retornaImagens(evt){
+        
+        cont = 0
+       
+        files = evt.target.files
+       
+          
+        if( files.length > 0){
+
+        document.getElementById('listaImg').innerHTML = ""
+
+        for (var i = 0; i <  files.length; i++) {              
+
+                reader = new FileReader()
+                   
+                    //reader._NAME = files[cont].name;
+                    //console.log('files: ' + files[cont].name)
+
+                reader.onload = (evt) =>{
+                    
+                    dataURL = evt.target.result    
+                   
+                    lista  = document.createElement("li")            
+                    imagem = document.createElement( "img" )
+                    imagem.setAttribute("class","img")
+                    imagem.setAttribute("name", files[cont].name)
+                    
+                    imagem.setAttribute("draggable",'true')
+                    imagem.setAttribute("ondragstart",'drag(event)' )
+                    imagem.setAttribute("ondragover",'over(event)' )
+                    imagem.setAttribute("ondrop",'drop(event)' )           
+                    imagem.src = dataURL
+                    imagem.id = cont
+                  
+                    lista.appendChild(imagem)
+                    listaImg.appendChild(lista)
+                    cont++
+                  
+                 }   
+                   reader.readAsDataURL( files[i] )
+                   
+             }   
+                
+
+
+         }          
+     
+    }   
+
+
+    xmlhttpEstados.open("GET","retornarEstados.php",true);
+    xmlhttpEstados.send();
+    xmlhttpCidades.open("GET","retornaCidades.php",true);
+    xmlhttpCidades.send();
+
+    var request = new XMLHttpRequest()
+    meuForm = document.querySelector('#formClientes');
+    meuForm.addEventListener('submit', function( e ){
+        
+        e.preventDefault();
+        
+       var formData = new FormData(meuForm);
+       //formData.append('img', imgPrincipal);
+       request.open('POST',"gravaCliente.php", true)
+       request.send(formData)
+        document.getElementById('nome_cliente').value = '';
+        document.getElementById('telefone_cliente').value = '';
+        document.getElementById('categoria_cliente').value = '';
+        document.getElementById('textarea_cliente').value = '';
+        document.getElementById('select_cidades').value = '';
+        document.getElementById('inputImage').value = '';
+        document.getElementById('listaImg').innerHTML = '';
+      
+       
+       
+       
+     
+    })
+
+     document.getElementById('inputImagePrincipal').addEventListener('change', retornaImagensPrincipal);
+    document.getElementById('inputImage').addEventListener('change', retornaImagens);
+
+
+    
+   
+    
+   
+
+    
+
+</script>
+
+</body>
+</html>
+

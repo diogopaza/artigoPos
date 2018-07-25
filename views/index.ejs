@@ -417,29 +417,6 @@ h6 {
 
       })
 
-      function cadastrar(){
-        alert('cliquei');
-        if(window.XMLHttpRequest){
-        xmlhttpCadastrar = new XMLHttpRequest();    
-          
-        }
-
-    xmlhttpCadastrar.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-               
-              var divView = document.querySelector('.view');
-               divView.innerHTML = this.responseText;
-               divView.style.backgroundImage = "url('')";
-               divView.style.backgroundColor = '#F6F4F1';
-                
-            }
-        }
-
-
-        xmlhttpCadastrar.open("GET","cadastrar.php",true);
-        xmlhttpCadastrar.send();
-
-      }
 
     </script>
 
