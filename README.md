@@ -117,9 +117,6 @@ Feito isso devemos mostrar ao express onde carregar nossas views
 app.set('views', './views')
 
 
-Dentro do modelo MVC temos o C de controller
-Então criaremos nossa pasta controller na raiz do nosso projeto
-E depois criaremos o arqui cadastrarEstadoController.js
 
 BODY-PARSER
 Dentro do nosso vamos precisar receber as informações vindas da nossa view
@@ -134,6 +131,55 @@ npm install body-parser --save
 MÓDULO FS 
 A maneira de se trabalhar com arquivos externos no node é o uso do file system
 Para usar esse módulo temos que importa o ('fs')
+
+MÓDULO MULTIPARTY
+
+Para enviar nossos arquivos das nossas views para nosso servidor
+vamos precisar do modulo multiparty já que que precisamos usar o atributo 
+enctype= multipart/form-data no nosso FORM dos nossos formulários. Este atributo 
+básicamente diz para não mexer em nada, ou seja nossos arquivos(imagens) vão chegar com o caminho 
+nome, tamanho tudo do jeito que precisamos para salvar.
+
+npm install multiparty --save
+
+Dentro do modelo MVC temos o C de controller
+Então criaremos nossa pasta controller na raiz do nosso projeto
+E depois criaremos o arqui cadastrarEstadoController.js 
+
+var multiparty = require('multiparty')
+
+module.exports.cadastrarEstado = function( req, res,next){
+
+    var dadosForm = new multiparty.Form()
+    dadosForm.parse(req, function(err, campos, arquivos){
+      
+    })
+   
+   
+    res.send('controler do cadastrar')
+
+}
+
+MONGODB
+
+Agora precisamos persistir nossos dados. Para isso utilizaremos o módulo mongodb nativo,
+para fazer a conexão com nosso banco de dados MONGODB
+Dentro da pasta config vamos criar o arquivo dbConnection.js para fazer a comunicação com
+nosso banco.
+
+Lembrando que nosso servidor precisa estar rodando em nosso sistema operacional
+
+Instalar mongodb
+
+npm install mongodb --save
+
+Arquivo dbConnection.js
+
+
+
+
+
+
 
 
 
