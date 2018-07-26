@@ -3,6 +3,7 @@ var router = express.Router();
 cadastrarEstadoController = require('../controllers/cadastrarEstadoController')
 fs = require('fs')
 
+
 var path_public = __dirname + '/public'
 
 /* GET home page. */
@@ -18,12 +19,7 @@ router.get('/cadastrar', function(req, res, next){
 
 router.post('/cadastrarEstado', function(req, res, next){
   
-    
-    fs.readdir('./public', function(err, arquivos){
-      console.log(arquivos)
-    })
-  
-  res.send('cheguei')
-  })
+  cadastrarEstadoController.cadastrarEstado(req, res,next)
 
+})
 module.exports = router;

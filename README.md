@@ -131,6 +131,10 @@ Instalar móudlo
 
 npm install body-parser --save
 
+MÓDULO FS 
+A maneira de se trabalhar com arquivos externos no node é o uso do file system
+Para usar esse módulo temos que importa o ('fs')
+
 
 
 

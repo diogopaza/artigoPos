@@ -1,5 +1,12 @@
-module.exports.cadastrarEstado = function( req, res){
+var multiparty = require('multiparty')
 
+module.exports.cadastrarEstado = function( req, res,next){
+
+    var dadosForm = new multiparty.Form()
+    dadosForm.parse(req, function(err, campos, arquivos){
+      console.log(arquivos)
+    })
+   
    
     res.send('controler do cadastrar')
 
