@@ -175,6 +175,45 @@ npm install mongodb --save
 
 Arquivo dbConnection.js
 
+var MongoClient = require('mongodb').MongoClient
+
+var db;
+
+exports.connect = async function(callback){
+
+    await MongoClient.connect('mongodb://localhost:27017',{ useNewUrlParser: true }, function(err, dbConnection){
+    if (err) console.log('erro no instanciar mongo')
+        console.log('Conectado ao MongoDB')
+        db = dbConnection.db('bancoMongoPos')
+        callback(err, dbConnection)
+    })
+}
+
+
+   
+
+
+
+exports.getDbConnection = function(){
+    return db
+}
+
+O arquivo dbConnection.js exporta duas funcções a função connect vamos 
+inicializar junto ao nosso arquivo app.js e dentro da chamda do metodo connect
+vamos inicializar nosso servidor web.
+
+Veja como fica nosso app.js
+Lembrando de importar o mongodb
+
+mongo.connect((err, db) => {
+  
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando na ${PORT}`)
+    })
+
+})
+
+Assim ao inicializarmos nosso sistema já verificamos nossa conexão com o banco de dados
 
 
 

@@ -1,6 +1,7 @@
 var express = require('express');
 var app = require('./config/server')
 var bodyParser = require('body-parser')
+var mongo = require('./config/dbConnection')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -14,8 +15,15 @@ app.use('/users', usersRouter);
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na ${PORT}`)
+
+mongo.connect((err, db) => {
+
+    
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando na ${PORT}`)
+    })
+
 })
+
 
 module.exports = app;
