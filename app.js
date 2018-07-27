@@ -14,7 +14,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 const PORT = process.env.PORT || 3000
-
+mydir = __dirname
+console.log(mydir)
 
 mongo.connect((err, db) => {
 
