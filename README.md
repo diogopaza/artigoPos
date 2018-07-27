@@ -128,9 +128,7 @@ Instalar móudlo
 
 npm install body-parser --save
 
-MÓDULO FS 
-A maneira de se trabalhar com arquivos externos no node é o uso do file system
-Para usar esse módulo temos que importa o ('fs')
+
 
 MÓDULO MULTIPARTY
 
@@ -189,11 +187,6 @@ exports.connect = async function(callback){
     })
 }
 
-
-   
-
-
-
 exports.getDbConnection = function(){
     return db
 }
@@ -215,7 +208,22 @@ mongo.connect((err, db) => {
 
 Assim ao inicializarmos nosso sistema já verificamos nossa conexão com o banco de dados
 
+Avançando mais um pouco
 
+MÓDULO FS 
+A maneira de se trabalhar com arquivos externos no node é o uso do file system
+Para usar esse módulo temos que importa o ('fs')
+
+STREAM
+É uma forma de representar uma sequencia de bits
+Podem ser entendidas como coleções de dados, exatamente como Arrays ou Objetos, mas a diferença
+é que os dados em uma stream podem não estar todos diponiveis de uma vez, além disso também não precisam 
+utilizar memória, ou seja, não é necessário que esses bits sejam armazenados na RAM.
+Isso torna as streams ferramentas poderosas para o desenvolvimento em grandes massas de dados, pois
+podemos trabalhar em pequenos pedaços(chunks como são chamados) e continuamente sem precisar salvar nada em memória
+
+
+ 
 
 
 
