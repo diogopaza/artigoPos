@@ -23,3 +23,10 @@ router.post('/cadastrarEstado', function(req, res, next){
 
 })
 module.exports = router;
+
+router.get('/clientes', function(req, res, next){
+  
+  res.send('estou nos clientes estados')
+
+})
+module.exports = router;

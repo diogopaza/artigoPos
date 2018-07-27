@@ -11,30 +11,32 @@ module.exports.cadastrarEstado = function( req, res,next){
         //conecta ao mongo e passa a collection estados
         var db = mongo.getDbConnection()
         collection = db.collection('estados')
-        rstream =  await fs.createReadStream(arquivos.foto[0].path)
-        wstream =  await fs.createWriteStream('imagemBandeira2.jpg') 
-        await rstream.pipe(wstream)
         var name_image =  arquivos.foto[0].originalFilename
         var bandeira = 'public/img/' + name_image   
+       
+        rstream =  await fs.createReadStream(arquivos.foto[0].path)
+        wstream =  await fs.createWriteStream(name_image) 
+        await rstream.pipe(wstream)
+       
         
          //move a foto atual para nosso pasta de imagens
-         fs.rename( 'imagemBandeira.jpg' , bandeira, function(err){
+         fs.rename( name_image , bandeira, function(err){
             if (err) console.log(err) 
                 console.log('Bandeira gravada com sucesso')
               
         })
     
-       /*
+       
         await collection.insertMany([
             {
             estado: campos.nomeEstado,
-            bandeira:35
+            bandeira: bandeira
             }
         ])
         
         console.log(bandeira)
 
-   */
+   
    
 })
     res.send('controler do cadastrar')
