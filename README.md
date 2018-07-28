@@ -18,6 +18,19 @@ Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computa
 Claro que nem tudo são flores, pois falta ao Javascript alguns recursos necessários para o desenvolvimento de sistemas
 mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipós,com é possível criar com outras linguagens.
 
+Continuando nossos estudos do Node.js
+
+Grande parte das características e principalmente das vantagens do Node.js se devem ao funcionamento do seu loop single-thread principal e como ele se relaciona com as demais partes do Node.
+A maioria dos backends por trás dos websites mais famosos não fazem computação complicada.A maior parte das operações são de leitura e escrita em disco, ou seja esperando sua vez de ler e escrever no disco.  Processar dados ou seja executar algoritimos é algo extremamente mais rápido do qualquer operação IO(Input & Output). Por exemplo ao executar um ping no site do google.com, um dos mais rápidos a latência méida é de 37ms, daria para executar cerca de 80 milhoes de operações em uma CPU,  ou seja enquanto fazemos uma chamada para a internet poderiamos fazer 80 milhões de coisas.
+Por exemplo ao ler um arquivo em Java estamos efetuando uma operação bloqueante, seu programa não pode fazer mais nada exceto esperar a comunicação com rede ou disco terminar.Para resolver esse problema o Node.js usa um princípio semelhante ao setTimeout(func, x) do Javascript, onde a função passada como primeiro parâmetro é delegada para outra thread executar apos x milisegundos, liberando a thread principal para continuar seu fluxo de execução
+
+Node.js Event Loop
+
+
+
+
+
+
 Nosso Sistema Web 
 
 Nosso sistema terá uma tarefa simples, porém que englobara vários conceitos. Iremos cadastrar clientes para exibi-los em um site. Usaremos o framework Express e diversos módulos do Node.js além de Banco de Dados Orientado a Documentos.
