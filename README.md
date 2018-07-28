@@ -1,5 +1,14 @@
 <h1>Artigo final Pós Graduação WEBDEV Alfa </h1>
 
+NodeJS uma breve história 
+
+Em 2009 o Node.js foi desenvolvido por Ryan Dahl em torno do motor V8, essencialmente
+como uma forma de rodar programas javascript fora do contexto de um browser.
+O Node não foi o primeiro software do gênero o Rhino já era bastante utilizado e a própria Netscap tinha lançado 
+o Enterprise Server no meio da década de 90.
+Para rodar fora do navegador é preciso oferecer APIs para interagir com o sitema - manipular arquivos e conexões de rede, por exemplo. O Node seguiu a filosofia assíncrona como o Javascript já usava no browser, essa foi a primeira inovação que definiu sua identidade. 
+
+
 <p>Instale o express com o comando a seguir:</p>
 npm install express-generator -g
 
@@ -221,9 +230,13 @@ Podem ser entendidas como coleções de dados, exatamente como Arrays ou Objetos
 utilizar memória, ou seja, não é necessário que esses bits sejam armazenados na RAM.
 Isso torna as streams ferramentas poderosas para o desenvolvimento em grandes massas de dados, pois
 podemos trabalhar em pequenos pedaços(chunks como são chamados) e continuamente sem precisar salvar nada em memória
+Outra grande vantagem que ganhamos é a capacidade de podermos enviar o resultado de uma stream direto para outra.
+res.send() é um exemplo de stream
 
 
- 
+
+
+
 
 
 
