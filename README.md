@@ -13,6 +13,7 @@ Javascript em reutilização de software em larga escala fácil e sem dor de cab
 V8
 O V8 é o engine(motor) criado pela Google para ser usado no browser chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
 
+
 Comparação com outras linguagens
 
 Dentre as vantagens de se utilizar o Node umas delas é o fato
@@ -20,6 +21,8 @@ de Javascript ser uma linguagem extremamente difundida, em aplicativos Web é at
 Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computador de mesa ou nuim dispositivo móvel.
 Claro que nem tudo são flores, pois falta ao Javascript alguns recursos necessários para o desenvolvimento de sistemas
 mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipós,com é possível criar com outras linguagens.
+A grande desvantagem do Javascript é ser uma linguagem interpretada oque coloca ela em desvantagem quando comparada com linguagens compiladas, pois cada linha de código precisa ser interpretada enquanto o código é executado. Com o Node o V8 compila o código para linguagem de máquina que otimiza drasticamente a execução usando heurísticas, permitindo que a execução seja feito em código compilado e não interpretado
+
 
 Continuando nossos estudos do Node.js
 
