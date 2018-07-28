@@ -2,3 +2,4 @@ links
 
 https://epxx.co/artigos/nodejs1.html  Node.js: ferramenta e filosofia
 
+http://www.luiztools.com.br/post/entendendo-o-nodejs-event-loop/?gclid=Cj0KCQjwqPDaBRC6ARIsACAf4hBp-Dcm4lXvXPWYoso4Pr_wkqFUsRCkjo03bVorlEBlNruQvZ8xaAMaAkzdEALw_wcB
