@@ -7,6 +7,13 @@ como uma forma de rodar programas javascript fora do contexto de um browser.
 O Node não foi o primeiro software do gênero o Rhino já era bastante utilizado e a própria Netscap tinha lançado 
 o Enterprise Server no meio da década de 90.
 Para rodar fora do navegador é preciso oferecer APIs para interagir com o sitema - manipular arquivos e conexões de rede, por exemplo. O Node seguiu a filosofia assíncrona como o Javascript já usava no browser, essa foi a primeira inovação que definiu sua identidade. 
+Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a materialização de um sonho da comunidade
+Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
+
+Comparação com outras linguagens
+
+Dentre as vantagens de se utilizar o Node umas delas é o fato
+de Javascript ser uma linguagem extremamente difundida, em aplicativos Web é atraente usar a mesma linguagem tanto no back-end como no front-end
 
 
 <p>Instale o express com o comando a seguir:</p>
