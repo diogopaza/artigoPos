@@ -18,6 +18,12 @@ Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computa
 Claro que nem tudo são flores, pois falta ao Javascript alguns recursos necessários para o desenvolvimento de sistemas
 mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipós,com é possível criar com outras linguagens.
 
+Nosso Sistema Web 
+
+Nosso sistema terá uma tarefa simples, porém que englobara vários conceitos. Iremos cadastrar clientes para exibi-los em um site. Usaremos o framework Express e diversos módulos do Node.js além de Banco de Dados Orientado a Documentos.
+
+
+
 
 
 
