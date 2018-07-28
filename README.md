@@ -10,6 +10,9 @@ Para rodar fora do navegador é preciso oferecer APIs(conjunto de rotinas e padr
 Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a materialização de um sonho da comunidade
 Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
 
+V8
+O V8 é o engine(motor) criado pela Google para ser usado no browser chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
+
 Comparação com outras linguagens
 
 Dentre as vantagens de se utilizar o Node umas delas é o fato
@@ -25,6 +28,7 @@ A maioria dos backends por trás dos websites mais famosos não fazem computaç�
 Por exemplo ao ler um arquivo em Java estamos efetuando uma operação bloqueante, seu programa não pode fazer mais nada exceto esperar a comunicação com rede ou disco terminar.Para resolver esse problema o Node.js usa um princípio semelhante ao setTimeout(func, x) do Javascript, onde a função passada como primeiro parâmetro é delegada para outra thread executar apos x milisegundos, liberando a thread principal para continuar seu fluxo de execução
 
 Node.js Event Loop
+Event Loop é o nome que se da ao ciclo de eventos que acontece infinitamente enquanto há callbacks e eventos sendo processados na aplicação.
 
 
 
