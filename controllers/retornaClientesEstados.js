@@ -1,5 +1,8 @@
-module.exports.retornaEstados = (req, res,next) => {
+estadoModel = require('../models/estadoModel')
 
-    
-    res.render('clientes')
+module.exports.retornaEstados = async (req, res,next) => {
+
+ result = await  estadoModel.retornarEstados()
+        
+    res.render('clientes', {estados: result})
 }

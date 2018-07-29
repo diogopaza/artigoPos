@@ -12,5 +12,19 @@ module.exports.cadastrarEstadoModel = async function(estado, bandeira){
         bandeira: bandeira
         }
     ])
+  
+}
+
+module.exports.retornarEstados = async function(){
+
+    
+    var db = await mongo.getDbConnection()
+    collection = db.collection('estados')
+
+    var myDocs = await collection.find({}).toArray()
+    return myDocs
+    
+
+  
 
 }

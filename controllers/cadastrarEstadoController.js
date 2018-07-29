@@ -1,5 +1,5 @@
 var multiparty = require('multiparty')
-cadastrarEstadoModel = require('../models/cadastrarEstadoModel')
+cadastrarEstadoModel = require('../models/estadoModel')
 
 fs = require('fs')
 
@@ -26,10 +26,8 @@ module.exports.cadastrarEstado = function( req, res,next){
               
         })
 
-        cadastrarEstadoModel.cadastrarEstadoModel(estado, bandeira, function(err){
-            if (err) console.log('erro ao inserir no mongo')
-                console.log('inserido com sucesso no mongo')
-        }) 
+        cadastrarEstadoModel.cadastrarEstadoModel(estado, bandeira)
+          
    
 })
     res.send('controler do cadastrar')
