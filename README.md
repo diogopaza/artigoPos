@@ -14,7 +14,7 @@ Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a mater
 Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
 
 V8
-O V8 é o engine(motor) criado pela Google para ser usado no browser Chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
+O V8 é o engine(motor) Javascript criado pela Google escrito em C++ para ser usado no browser Chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
 
 
 Comparação com outras linguagens
@@ -25,6 +25,7 @@ Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computa
 Claro que nem tudo são flores, pois falta ao Javascript alguns recursos necessários para o desenvolvimento de sistemas
 mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipos,com é possível criar com outras linguagens.
 A grande desvantagem do Javascript é ser uma linguagem interpretada oque coloca ela em desvantagem quando comparada com linguagens compiladas, pois cada linha de código precisa ser interpretada enquanto o código é executado. Com o Node o V8 compila o código para linguagem de máquina que otimiza drasticamente a execução usando heurísticas, permitindo que a execução seja feito em código compilado e não interpretado.
+E a grande vantagem a escabilidade visto que o node.js é single-thread, diferente de outras linguagnes que cada conexão nova cria uma thread que potencialmente tem axedo a ela 2MB ou seja em um servidor com 8GB de RAM você terá um limite fisíco de 4.000 conexões e caso sua aplicação necessite aumentar você vai precisar adicionar mais e mais servidores. 
 
 
 Continuando nossos estudos do Node.js
