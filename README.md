@@ -9,37 +9,37 @@ Em 2009 o Node.js foi desenvolvido por Ryan Dahl em torno do motor V8, essencial
 como uma forma de rodar programas javascript fora do contexto de um browser.
 O Node não foi o primeiro software do gênero o Rhino já era bastante utilizado e a própria Netscap tinha lançado 
 o Enterprise Server no meio da década de 90.
-Para rodar fora do navegador é preciso oferecer APIs(conjunto de rotinas e padrões de programação para acesso a um aplicativo) para interagir com o sitema - manipular arquivos e conexões de rede, por exemplo. O Node seguiu a filosofia assíncrona como o Javascript já usav'a no browser, essa foi a primeira inovação que definiu sua identidade. 
+Para rodar fora do navegador é preciso oferecer APIs(conjunto de rotinas e padrões de programação para acesso a um aplicativo) para interagir com o sitema - manipular arquivos e conexões de rede, por exemplo. O Node seguiu a filosofia assíncrona como o Javascript já usava no browser, essa foi a primeira inovação que definiu sua identidade. 
 Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a materialização de um sonho da comunidade
 Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
 
 V8
-O V8 é o engine(motor) criado pela Google para ser usado no browser chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
+O V8 é o engine(motor) criado pela Google para ser usado no browser Chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
 
 
 Comparação com outras linguagens
 
 Dentre as vantagens de se utilizar o Node umas delas é o fato
 de Javascript ser uma linguagem extremamente difundida, em aplicativos Web é atraente usar a mesma linguagem tanto no back-end como no front-end
-Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computador de mesa ou nuim dispositivo móvel.
+Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computador de mesa ou em um dispositivo móvel.
 Claro que nem tudo são flores, pois falta ao Javascript alguns recursos necessários para o desenvolvimento de sistemas
-mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipós,com é possível criar com outras linguagens.
-A grande desvantagem do Javascript é ser uma linguagem interpretada oque coloca ela em desvantagem quando comparada com linguagens compiladas, pois cada linha de código precisa ser interpretada enquanto o código é executado. Com o Node o V8 compila o código para linguagem de máquina que otimiza drasticamente a execução usando heurísticas, permitindo que a execução seja feito em código compilado e não interpretado
+mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipos,com é possível criar com outras linguagens.
+A grande desvantagem do Javascript é ser uma linguagem interpretada oque coloca ela em desvantagem quando comparada com linguagens compiladas, pois cada linha de código precisa ser interpretada enquanto o código é executado. Com o Node o V8 compila o código para linguagem de máquina que otimiza drasticamente a execução usando heurísticas, permitindo que a execução seja feito em código compilado e não interpretado.
 
 
 Continuando nossos estudos do Node.js
 
 Grande parte das características e principalmente das vantagens do Node.js se devem ao funcionamento do seu loop single-thread principal e como ele se relaciona com as demais partes do Node.
-A maioria dos backends por trás dos websites mais famosos não fazem computação complicada.A maior parte das operações são de leitura e escrita em disco, ou seja esperando sua vez de ler e escrever no disco.  Processar dados ou seja executar algoritimos é algo extremamente mais rápido do qualquer operação IO(Input & Output). Por exemplo ao executar um ping no site do google.com, um dos mais rápidos a latência méida é de 37ms, daria para executar cerca de 80 milhoes de operações em uma CPU,  ou seja enquanto fazemos uma chamada para a internet poderiamos fazer 80 milhões de coisas.
+A maioria dos backends por trás dos websites mais famosos não fazem computação complicada.A maior parte das operações são de leitura e escrita em disco, ou seja esperando sua vez de ler e escrever no disco.  Processar dados ou seja executar algoritimos é algo extremamente mais rápido do qualquer operação IO(Input & Output). Por exemplo ao executar um ping no site do google.com, um dos mais rápidos sites do mundo em tempo deresposta a latência méida é de 37ms, daria para executar cerca de 80 milhoes de operações em uma CPU,  ou seja enquanto fazemos uma chamada para a internet poderiamos fazer 80 milhões de coisas.
 Por exemplo ao ler um arquivo em Java estamos efetuando uma operação bloqueante, seu programa não pode fazer mais nada exceto esperar a comunicação com rede ou disco terminar.Para resolver esse problema o Node.js usa um princípio semelhante ao setTimeout(func, x) do Javascript, onde a função passada como primeiro parâmetro é delegada para outra thread executar apos x milisegundos, liberando a thread principal para continuar seu fluxo de execução
 
 Node.js Event Loop
 Event Loop é o nome que se da ao ciclo de eventos que acontece infinitamente enquanto há callbacks e eventos sendo processados na aplicação.
 
+I/O assíncrono não bloqueante
 
-
-
-
+Essa é a característica que torn ao Node.js tão poderoso, trabalhar de forma não bloqueante facilita a excução paralela e o aproveitmento de recursos.
+Em linguagens como PHP por exemplo para realizarmos uma operação matemática, ler um arquivo de disco e transforma ro resultado em uma String, cada ação será executada apenas depois que a ação anterior for encerrada. No Node.js nós temos funções que são passadas por parâmetro para serem chamadas quando a ação é é finalizada. Essas funções são chamadas de callbacks. 
 
 Nosso Sistema Web 
 
