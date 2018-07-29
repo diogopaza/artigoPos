@@ -10,11 +10,21 @@ como uma forma de rodar programas javascript fora do contexto de um browser.
 O Node não foi o primeiro software do gênero o Rhino já era bastante utilizado e a própria Netscap tinha lançado 
 o Enterprise Server no meio da década de 90.
 Para rodar fora do navegador é preciso oferecer APIs(conjunto de rotinas e padrões de programação para acesso a um aplicativo) para interagir com o sitema - manipular arquivos e conexões de rede, por exemplo. O Node seguiu a filosofia assíncrona como o Javascript já usava no browser, essa foi a primeira inovação que definiu sua identidade. 
-Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a materialização de um sonho da comunidade
-Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
+
 
 V8
 O V8 é o engine(motor) Javascript criado pela Google escrito em C++ para ser usado no browser Chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
+
+NPM
+Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a materialização de um sonho da comunidade
+Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
+Com certeza o npm é uma das grandes forças do Node.js, pois muitas linguagens tentaram e não conseguiram o Node resolveu com o npm:
+um sistema fácil de usar;
+fácil de colaborar;
+e não cria problemas;
+
+Um aspecto fundamental do npm é que por padrão os pacotes são instalados na pasta corrente, se você tiver 50 aplicativos diferentes pode instalar as depêndencias de cada um em sua própria pasta, mesmo que cada aplicativo exija uma versão diferente de um mesmo módulo de terceiros, não haverá conflitos. 
+
 
 
 Comparação com outras linguagens
@@ -23,7 +33,7 @@ Dentre as vantagens de se utilizar o Node umas delas é o fato
 de Javascript ser uma linguagem extremamente difundida, em aplicativos Web é atraente usar a mesma linguagem tanto no back-end como no front-end
 Javascript é facil de rodar em qualquer lugar. Seja em um browser em um computador de mesa ou em um dispositivo móvel.
 Claro que nem tudo são flores, pois falta ao Javascript alguns recursos necessários para o desenvolvimento de sistemas
-mais 'sérios' como sistemas ERP, já que o Javascript não possui classes poderosas o suficiente para criar novos tipos,com é possível criar com outras linguagens.
+mais 'sérios' como sistemas ERP(), já que o Javascript não possui classes poderosas o suficiente para criar novos tipos,com é possível criar com outras linguagens.
 A grande desvantagem do Javascript é ser uma linguagem interpretada oque coloca ela em desvantagem quando comparada com linguagens compiladas, pois cada linha de código precisa ser interpretada enquanto o código é executado. Com o Node o V8 compila o código para linguagem de máquina que otimiza drasticamente a execução usando heurísticas, permitindo que a execução seja feito em código compilado e não interpretado.
 E a grande vantagem a escabilidade visto que o node.js é single-thread, diferente de outras linguagnes que cada conexão nova cria uma thread que potencialmente tem axedo a ela 2MB ou seja em um servidor com 8GB de RAM você terá um limite fisíco de 4.000 conexões e caso sua aplicação necessite aumentar você vai precisar adicionar mais e mais servidores. 
 

@@ -12,11 +12,6 @@ exports.connect = async function(callback){
     })
 }
 
-
-   
-
-
-
 exports.getDbConnection = function(){
     return db
 }
