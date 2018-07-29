@@ -36,10 +36,14 @@ Por exemplo ao ler um arquivo em Java estamos efetuando uma operação bloqueant
 Node.js Event Loop
 Event Loop é o nome que se da ao ciclo de eventos que acontece infinitamente enquanto há callbacks e eventos sendo processados na aplicação.
 
-I/O assíncrono não bloqueante
+Arquitetura baseado em eventos de I/O assíncrono não bloqueante
 
-Essa é a característica que torn ao Node.js tão poderoso, trabalhar de forma não bloqueante facilita a excução paralela e o aproveitmento de recursos.
-Em linguagens como PHP por exemplo para realizarmos uma operação matemática, ler um arquivo de disco e transforma ro resultado em uma String, cada ação será executada apenas depois que a ação anterior for encerrada. No Node.js nós temos funções que são passadas por parâmetro para serem chamadas quando a ação é é finalizada. Essas funções são chamadas de callbacks. 
+Nenhuma operação de I/O irá interromper o fluxo do thread principal. Ou seja todas as requisições serão executadas e nenhuma delas será capaz de interromper o processamento de outras. Não bloqueante no nosso caso é sinônimo de assíncrono. 
+Essa é a característica que torna ao Node.js tão poderoso, trabalhar de forma não bloqueante facilita a execução paralela e o aproveitmento de recursos.
+Em linguagens como PHP por exemplo para realizarmos uma operação matemática, ler um arquivo de disco e transformar o resultado em uma String, cada ação será executada apenas depois que a ação anterior for encerrada. No Node.js nós temos funções que são passadas por parâmetro para serem chamadas quando a ação é é finalizada. Essas funções são chamadas de callbacks.
+Oque o node.js faz é criar um laço onde toda e qualquer operação assíncrona de entrada e saída gera um evento. Cada chamada a uma função externa ao thread principal pendura uma função de callback neste laço. Assim que o evento ocorre o callback correspondente é chamado.
+
+
 
 Nosso Sistema Web 
 
