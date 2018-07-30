@@ -8,7 +8,7 @@ var usersRouter = require('./routes/users');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.use(express.static( './public'));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -16,6 +16,8 @@ app.use('/users', usersRouter);
 const PORT = process.env.PORT || 3000
 mydir = __dirname
 console.log(mydir)
+
+app.use( express.static( 'public'));
 
 mongo.connect((err, db) => {
 

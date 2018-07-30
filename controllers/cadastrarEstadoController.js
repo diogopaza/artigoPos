@@ -12,7 +12,7 @@ module.exports.cadastrarEstado = function( req, res,next){
         //conecta ao mongo e passa a collection estados
       
         var name_image =  arquivos.foto[0].originalFilename
-        var bandeira = 'public/img/' + name_image   
+        var bandeira = './artigo/public/img/' + name_image   
         var estado =  campos.nomeEstado
         rstream =  await fs.createReadStream(arquivos.foto[0].path)
         wstream =  await fs.createWriteStream(name_image) 
