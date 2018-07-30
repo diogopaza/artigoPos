@@ -19,6 +19,7 @@ console.log(mydir)
 
 app.use( express.static( 'public'));
 
+console.log(__dirname)
 mongo.connect((err, db) => {
 
     
