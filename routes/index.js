@@ -8,7 +8,7 @@ fs = require('fs')
 
 var path_public = __dirname + '/public'
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });

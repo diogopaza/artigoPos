@@ -45,26 +45,22 @@
         <div class="row section no-space-row">
         
            <div id="conteudo">
-              
+                <% var cont =1 %>
                     <% for(estado of estados){ %>
                           <div class='col  m6 s12'>
                               <div class='card hoverable wow bounceInLeft' data-wow-delay='1s'>
-                                  <div class='card-image'>
-                         
-                                      <img src="<%= estado.bandeira %>" class='imagem-card'>
-                                      
-                                     
-                                  
+                                  <div class='card-image'>                       
+                                      <img src="<%= estado.bandeira %>" class='imagem-card'>                                
                                   </div>
                               <div class='card-title '>
-                              <a  href='javascript:void(0);' class='card-title linkEstados' onclick='retornarCidades(this)' id='".$row['id']."'><h4 class=' teal lighten-2 white-text'><%= estado.estado %></h4></a>
+                              <a  href='#'  class='card-title linkEstados' onclick='retornarCidades(this.id)' id="<%= estado.estado %>"><h4 class=' teal lighten-2 white-text'><%= estado.estado %></h4></a>
                               
                           </div>
                           
                       </div>
                       
                   </div>
-                  <% } %>
+                  <% cont++ } %>
             </div>         
              
       </div>
@@ -82,8 +78,10 @@ function mostrar2(){
 }
 
 
-  function retornarCidades(elemento){
+  function retornarCidades(element){
       
+    alert(element)
+    /*
       if(window.XMLHttpRequest){
          xmlhttp = new XMLHttpRequest();
       }
@@ -99,7 +97,7 @@ function mostrar2(){
 
        xmlhttp.open("GET","cidades.php?q="+elemento.id,true);
        xmlhttp.send();
-
+      */
   }
 
   function retornarClientes(elemento){

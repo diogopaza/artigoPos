@@ -12,7 +12,8 @@ module.exports.cadastrarEstado = function( req, res,next){
         //conecta ao mongo e passa a collection estados
       
         var name_image =  arquivos.foto[0].originalFilename
-        var bandeira = 'img/' + name_image   
+        var bandeira = 'img/' + name_image  
+        var gravarImagemBandeira =  'public/img/' + name_image
         var estado =  campos.nomeEstado
         rstream =  await fs.createReadStream(arquivos.foto[0].path)
         wstream =  await fs.createWriteStream(name_image) 
@@ -20,7 +21,7 @@ module.exports.cadastrarEstado = function( req, res,next){
        
         
          //move a foto atual para nosso pasta de imagens
-         fs.rename( name_image , bandeira, function(err){
+         fs.rename( name_image , gravarImagemBandeira, function(err){
             if (err) console.log(err) 
                 console.log('Bandeira gravada com sucesso')
               
