@@ -288,6 +288,7 @@ Isso torna as streams ferramentas poderosas para o desenvolvimento em grandes ma
 podemos trabalhar em pequenos pedaços(chunks como são chamados) e continuamente sem precisar salvar nada em memória
 Outra grande vantagem que ganhamos é a capacidade de podermos enviar o resultado de uma stream direto para outra.
 res.send() é um exemplo de stream
+Para trabalhar com Node.js e streams basicamente você deve ler um arquivo, imagem e gravar esses dados em uma variavel, depois cria uma outra varável que irá receber esses dados, essa stream. E por último é só criar a stream.
 
 
 A API FETCH

@@ -33,7 +33,7 @@ router.get('/clientes', function(req, res, next){
 
 })
 
-router.get('/cadastrarCidade', function(req, res, next){
+router.post('/cadastrarCidade', function(req, res, next){
   
   cadastrar.cadastrarCidade(req, res,next)
   
