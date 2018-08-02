@@ -34,3 +34,10 @@ module.exports.cadastrarEstado = function( req, res,next){
     res.send('controler do cadastrar')
 
 }
+
+module.exports.cadastrarCidade = function( req, res,next){
+
+
+    res.send('estou no controller cadastar cidade')
+
+}

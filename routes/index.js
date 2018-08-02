@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-cadastrarEstadoController = require('../controllers/cadastrarEstadoController')
+cadastrar = require('../controllers/cadastrar')
 retornaClientesEstados = require('../controllers/retornaClientesEstados')
 retornaCidades = require('../controllers/retornaClientesCidades')
 
@@ -22,7 +22,7 @@ router.get('/cadastrar', function(req, res, next){
 
 router.post('/cadastrarEstado', function(req, res, next){
   
-  cadastrarEstadoController.cadastrarEstado(req, res,next)
+  cadastrar.cadastrarEstado(req, res,next)
 
 })
 module.exports = router;
@@ -32,6 +32,12 @@ router.get('/clientes', function(req, res, next){
  retornaClientesEstados.retornaEstados(req, res, next)
 
 })
+
+router.get('/cadastrarCidade', function(req, res, next){
+  
+  cadastrar.cadastrarCidade(req, res,next)
+  
+  })
 
 router.get('/retornaClientesCidades', function(req, res, next){
 
