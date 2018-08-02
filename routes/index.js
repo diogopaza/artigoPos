@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 cadastrarEstadoController = require('../controllers/cadastrarEstadoController')
 retornaClientesEstados = require('../controllers/retornaClientesEstados')
+retornaCidades = require('../controllers/retornaClientesCidades')
 
 fs = require('fs')
 
@@ -32,7 +33,10 @@ router.get('/clientes', function(req, res, next){
 
 })
 
+router.get('/retornaClientesCidades', function(req, res, next){
 
+   retornaCidades.retornarCidades(req, res, next)
+})
 
 
 
