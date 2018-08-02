@@ -290,6 +290,10 @@ Outra grande vantagem que ganhamos é a capacidade de podermos enviar o resultad
 res.send() é um exemplo de stream
 
 
+A API FETCH
+A API Fetch fornece uma interface Javascript para acessar e manipular partes do pipeline HTTP, tais como pedidos e repostas. Ele também fornece o método global fetch().
+Este tipo de funcionalidade era feita anteriormente utilizando o XMLHttpRequest.
+
 
 
 
