@@ -53,7 +53,7 @@
                                       <img src="<%= estado.bandeira %>" class='imagem-card'>                                
                                   </div>
                               <div class='card-title '>
-                              <a  href='#'  class='card-title linkEstados' onclick='retornarCidades(this.id)' id="<%= estado.estado %>"><h4 class=' teal lighten-2 white-text'><%= estado.estado %></h4></a>
+                              <a   class='card-title linkEstados' onclick='retornarCidades(this.id)' id="<%= estado.estado %>"><h4 class=' teal lighten-2 white-text'><%= estado.estado %></h4></a>
                               
                           </div>
                           
@@ -69,19 +69,16 @@
   </main>
 <script type="text/javascript">
   
-function mostrar(){
-  document.getElementById("esconder").style.display = "none";
-}
-function mostrar2(){
-  document.getElementById("esconder").style.display = "initial";
-
-}
-
-
-  function retornarCidades(element){
+function retornarCidades(element){
       
-   fetch('retornaClientesCidades')
-    .then( console.log('te'))
+    fetch('retornarEstados')
+      .then(function(response){
+        response.text().then(function(result){
+            console.log(result)
+        })
+
+      })
+
     /*
       if(window.XMLHttpRequest){
          xmlhttp = new XMLHttpRequest();

@@ -3,7 +3,7 @@ var router = express.Router();
 cadastrar = require('../controllers/cadastrar')
 retornaClientesEstados = require('../controllers/retornaClientesEstados')
 retornaCidades = require('../controllers/retornaClientesCidades')
-
+retornarEstadoModel = require('../models/estadoModel')
 fs = require('fs')
 
 
@@ -34,7 +34,7 @@ router.get('/clientes', function(req, res, next){
 })
 
 router.post('/cadastrarCidade', function(req, res, next){
-  
+ 
   cadastrar.cadastrarCidade(req, res,next)
   
   })
@@ -43,6 +43,13 @@ router.get('/retornaClientesCidades', function(req, res, next){
 
    retornaCidades.retornarCidades(req, res, next)
 })
+
+router.get('/retornarEstados', async function(req, res, next){
+  
+   estados = await retornarEstadoModel.retornarEstados()
+   
+   res.send({estados})
+  })
 
 
 

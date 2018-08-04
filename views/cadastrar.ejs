@@ -94,7 +94,7 @@
 
     </form>
 
-    <form enctype="multipart/form-data" action="cadastrarCidade" method="POST" class="formEstados">
+    <form  action="cadastrarCidade" method="POST" class="formEstados" enctype="multipart/form-data">
         <div id="formCidades">
             <h3>Cadastrar Cidade</h3>
                     <div>
@@ -142,47 +142,7 @@
     var meucontador = 0;
     var myIdBackup='';
 
-    if(window.XMLHttpRequest){
-        xmlhttpEstados = new XMLHttpRequest();
-           }   
-
-    xmlhttpEstados.onreadystatechange = function() {
-       
-            if (this.readyState == 4 && this.status == 200) {
-               
-                var classes = document.querySelectorAll('.selectEstados');
-                
-                for (var i = 0; i < classes.length; i++) {
-                   
-                    classes[i].innerHTML = this.responseText;
-                }
-
-                /*
-                document.querySelector('.selectEstados').innerHTML = this.responseText;
-                console.log('executei innerHTML');
-               */
-                
-            }
-        }
-
-     xmlhttpCidades.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-               
-                var classes = document.querySelectorAll('#selectCidades');
-               
-                for (var i = 0; i < classes.length; i++) {
-                   
-                    classes[i].innerHTML = this.responseText;
-                }
-
-                /*
-                document.querySelector('.selectEstados').innerHTML = this.responseText;
-                console.log('executei innerHTML');
-               */
-                
-            }
-    }
-
+    
 
        
         function drag(evt){
@@ -326,47 +286,6 @@
          }          
      
     }   
-
-
-    xmlhttpEstados.open("GET","retornarEstados.php",true);
-    xmlhttpEstados.send();
-    xmlhttpCidades.open("GET","retornaCidades.php",true);
-    xmlhttpCidades.send();
-
-    var request = new XMLHttpRequest()
-    meuForm = document.querySelector('#formClientes');
-    meuForm.addEventListener('submit', function( e ){
-        
-        e.preventDefault();
-        
-       var formData = new FormData(meuForm);
-       //formData.append('img', imgPrincipal);
-       request.open('POST',"gravaCliente.php", true)
-       request.send(formData)
-        document.getElementById('nome_cliente').value = '';
-        document.getElementById('telefone_cliente').value = '';
-        document.getElementById('categoria_cliente').value = '';
-        document.getElementById('textarea_cliente').value = '';
-        document.getElementById('select_cidades').value = '';
-        document.getElementById('inputImage').value = '';
-        document.getElementById('listaImg').innerHTML = '';
-      
-       
-       
-       
-     
-    })
-
-     document.getElementById('inputImagePrincipal').addEventListener('change', retornaImagensPrincipal);
-    document.getElementById('inputImage').addEventListener('change', retornaImagens);
-
-
-    
-   
-    
-   
-
-    
 
 </script>
 

@@ -37,7 +37,13 @@ module.exports.cadastrarEstado = function( req, res,next){
 
 module.exports.cadastrarCidade = function( req, res,next){
 
+    var dadosForm = new multiparty.Form()
+    dadosForm.parse(req, async function(err, campos, dados){
+        if (err) throw err
 
+        console.log(campos)
+
+    })
     res.send('estou no controller cadastar cidade')
 
 }
