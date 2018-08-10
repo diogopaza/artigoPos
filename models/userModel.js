@@ -1,8 +1,18 @@
 mongo = require('../config/dbConnection')
-db = mongo.myDB()
 
-module.exports.cadastrarEstadoModel = async function(connection, user){
-    collection = db.db('user')
-    res.send('estou no user model')
+
+module.exports.autenticar = async function(user, req, res){
+    console.log( user)
+    db = mongo.getDbConnection()
+    db.collection('user', function(err, collection){
+  
+        collection.find(user).toArray(function(err, result){
+            res.send(result)
+        })
+
+   })
+    
+
+ 
 
 }

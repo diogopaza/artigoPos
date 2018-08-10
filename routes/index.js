@@ -54,8 +54,7 @@ router.get('/retornarEstados', async function(req, res, next){
 
   router.post('/autenticar', async function(req, res, next){
     
-    dadosForm = req.body
-    res.send(dadosForm)
+   indexController.autenticar(req, res, next)
    
   })
 
