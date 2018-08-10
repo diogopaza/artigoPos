@@ -4,6 +4,7 @@ cadastrar = require('../controllers/cadastrar')
 retornaClientesEstados = require('../controllers/retornaClientesEstados')
 retornaCidades = require('../controllers/retornaClientesCidades')
 retornarEstadoModel = require('../models/estadoModel')
+indexController = require('../controllers/indexController')
 fs = require('fs')
 
 
@@ -25,7 +26,7 @@ router.post('/cadastrarEstado', function(req, res, next){
   cadastrar.cadastrarEstado(req, res,next)
 
 })
-module.exports = router;
+
 
 router.get('/clientes', function(req, res, next){
   
@@ -53,11 +54,10 @@ router.get('/retornarEstados', async function(req, res, next){
 
   router.post('/autenticar', async function(req, res, next){
     
-     res.send('to no router autenticar')
-    })
-
-
-
+    dadosForm = req.body
+    res.send(dadosForm)
+   
+  })
 
 
 module.exports = router;
