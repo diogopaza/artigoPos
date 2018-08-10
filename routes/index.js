@@ -12,6 +12,7 @@ var path_public = __dirname + '/public'
 
 
 router.get('/', function(req, res, next) {
+ 
   res.render('index', { title: 'Express' });
 });
 
@@ -52,8 +53,8 @@ router.get('/retornarEstados', async function(req, res, next){
    res.send({estados})
   })
 
-  router.post('/autenticar', async function(req, res, next){
-    
+  router.get('/autenticar',  function(req, res, next){
+    req.session.autorizado = true
    indexController.autenticar(req, res, next)
    
   })
