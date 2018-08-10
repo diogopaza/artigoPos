@@ -3,6 +3,15 @@ cadastrarEstadoModel = require('../models/estadoModel')
 
 fs = require('fs')
 
+module.exports.cadastrar = function(req, res, next){
+
+   if( req.session.autorizado ){
+       res.send('autenticado')
+   }else{
+       res.send('Favor efetuar login')
+   }
+}
+
 module.exports.cadastrarEstado = function( req, res,next){
 
     var dadosForm = new multiparty.Form()

@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/cadastrar', function(req, res, next){
 
-  res.render('cadastrar')
+  cadastrar.cadastrar(req, res, next)
 
 })
 
