@@ -51,6 +51,11 @@ router.get('/retornarEstados', async function(req, res, next){
    res.send({estados})
   })
 
+  router.post('/autenticar', async function(req, res, next){
+    
+     res.send('to no router autenticar')
+    })
+
 
 
 

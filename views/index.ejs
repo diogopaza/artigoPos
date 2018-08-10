@@ -353,7 +353,7 @@ h6 {
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-indigo">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+                <button class="btn btn-indigo" id='btn_send'>Send <i class="fa fa-paper-plane-o ml-1"></i></button>
             </div>
         </div>
     </div>
@@ -418,5 +418,11 @@ h6 {
       })
 
 
+    </script>
+    <script>
+      buttonSend = document.getElementById('btn_send')
+      buttonSend.addEventListener('click', function(){
+        alert('cliquei')
+      })
     </script>
 

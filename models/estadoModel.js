@@ -9,11 +9,25 @@ module.exports.cadastrarEstadoModel = async function(estado, bandeira){
     await collection.insertMany([
         {
         estado:estado,
-        bandeira: bandeira
-        }
+        bandeira: bandeira,
+        cidades:[{
+            cidade:{
+                   nomeCidade:'Cascavel',
+                   clientes: [
+                       { nomeCliente:'Bar', enderecoCliente:'Avenida'},
+                       {nomeCliente:'Mecanica', enderecoCliente:'CarlosGomes'}
+                   ],
+            }
+        
+
+        
+        }]
+    }
     ])
   
 }
+
+
 
 module.exports.retornarEstados = async function(){
 

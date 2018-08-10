@@ -73,8 +73,10 @@ function retornarCidades(element){
       
     fetch('retornarEstados')
       .then(function(response){
-        response.text().then(function(result){
-            console.log(result)
+        response.json().then(function(result){
+       
+           console.log(result.estados.length)
+            //console.log(result.estados[0].estado)
         })
 
       })

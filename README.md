@@ -15,7 +15,7 @@ Para rodar fora do navegador é preciso oferecer APIs(conjunto de rotinas e padr
 V8
 O V8 é o engine(motor) Javascript criado pela Google escrito em C++ para ser usado no browser Chrome. Em 2008 a Google tornou o V8 open source e passou a chamá-lo de Chromium project. Essa mudança possibilitou que a comunidade entendesse como o javascript é interpretado e compilado por essa.
 
-NPM
+NPM( Node Package Manager)
 Em 2011 foi desenvolvido o npm, gerenciador de pacotes do Node. O npm é a materialização de um sonho da comunidade
 Javascript em reutilização de software em larga escala fácil e sem dor de cabeça.
 Com certeza o npm é uma das grandes forças do Node.js, pois muitas linguagens tentaram e não conseguiram o Node resolveu com o npm:
