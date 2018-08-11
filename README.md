@@ -299,7 +299,13 @@ Express-Session
 
 Para registrar e efutar login de nossos usuário vamos usar o módulo express-session
 
-Middlewares
+Middlewares no express
+
+Middleware é todo tipo de função que está entre um pedido HTTP e a resposta final que o servidor envia de volta para o cliente. Ao o conceito de interceptar requisições damos o nome de middleware.
+Middlewares no node são funções que podem tratar os inputs e outputs das rotas antes e depois que uma rota é processada
+Para invocar novos middlewares no express usamos a função use
+Lembrando que a ordem que o middleware é chamado tem importância, caso você injete uma middleware na ordem errada, sua aplicação pode não responder corretamente e até parar de processador a rota corretamente.
+
 
 
 
