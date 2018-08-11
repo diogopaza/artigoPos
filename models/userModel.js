@@ -8,12 +8,13 @@ module.exports.autenticar = async function(user, req, res){
   
         collection.find(user).toArray(function(err, result){
             
-          
-            if(result != undefined){
-               // req.session.autorizado = true
-                res.send('usuario logado')
+            console.log(user)
+            if(result[0] != undefined){
+                console.log(result)
+                req.session.autorizado = true
+                res.render('cadastrar' )
             }else{
-                res.send('não é possível efetuar login')
+                res.send('Login inválido')
             }
         })
 

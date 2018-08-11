@@ -6,7 +6,7 @@ fs = require('fs')
 module.exports.cadastrar = function(req, res, next){
 
    if( req.session.autorizado ){
-       res.send('autenticado')
+       res.render('cadastrar')
    }else{
        res.send('Favor efetuar login')
    }

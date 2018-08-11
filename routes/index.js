@@ -53,8 +53,8 @@ router.get('/retornarEstados', async function(req, res, next){
    res.send({estados})
   })
 
-  router.get('/autenticar',  function(req, res, next){
-    req.session.autorizado = true
+  router.post('/autenticar',  function(req, res, next){
+    
    indexController.autenticar(req, res, next)
    
   })
