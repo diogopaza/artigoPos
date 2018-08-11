@@ -299,7 +299,13 @@ Express-Session
 
 Para registrar e efutar login de nossos usuário vamos usar o módulo express-session
 
+Middlewares
 
+
+
+importar o modulo express-session
+O módulo express é um middleware ou seja precisamos seta-lo para o nosso
+framework faça seu uso
 
 
 
