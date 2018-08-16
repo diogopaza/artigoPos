@@ -73,9 +73,9 @@ function retornarCidades(element){
     
     fetch('retornarEstado/?estado='+element)
       .then(function(response){
-        response.text().then(function(result){
+        response.json().then(function(result){
        
-           console.log(result)
+           console.log(result[0].estado)
             //console.log(result.estados[0].estado)
         })
 
