@@ -46,10 +46,14 @@ module.exports.retornarEstados = async function(){
 }
 
 
-module.exports.retornarEstado = async function(){
+module.exports.retornarEstado = async function(estado){
     
         
-     console.log('retornar estado')
+    var db = await mongo.getDbConnection()
+    collection = db.collection('estados')
+
+    var myDocs = await collection.find({ estado: estado }).toArray()
+    return myDocs
         
     
       

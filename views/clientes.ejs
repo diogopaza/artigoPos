@@ -70,8 +70,8 @@
 <script type="text/javascript">
   
 function retornarCidades(element){
-     // console.log(element)
-    fetch('retornarEstado/?name=diogo')
+    
+    fetch('retornarEstado/?estado='+element)
       .then(function(response){
         response.text().then(function(result){
        

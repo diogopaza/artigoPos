@@ -9,9 +9,8 @@ module.exports.retornaEstados = async (req, res,next) => {
 }
 
 module.exports.retornaEstado = async (req, res,next) => {
-    
-       // result = await estadoModel.retornarEstados()
-       // console.log('controller estado')
+        estado = req.query.estado
+        result = await estadoModel.retornarEstado(estado)
         res.send('222')
         
     }
