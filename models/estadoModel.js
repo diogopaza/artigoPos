@@ -44,3 +44,14 @@ module.exports.retornarEstados = async function(){
   
 
 }
+
+
+module.exports.retornarEstado = async function(){
+    
+        
+     console.log('retornar estado')
+        
+    
+      
+    
+    }

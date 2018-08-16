@@ -71,11 +71,11 @@
   
 function retornarCidades(element){
      // console.log(element)
-    fetch(`retornarEstados/?name=${'dfgdf'}`)
+    fetch('retornarEstado/?name=diogo')
       .then(function(response){
-        response.json().then(function(result){
+        response.text().then(function(result){
        
-          // console.log(result)
+           console.log(result)
             //console.log(result.estados[0].estado)
         })
 

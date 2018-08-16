@@ -314,7 +314,7 @@ dependentes de cookies, mas realizados no lado do servidor.
 
 
 importar o modulo express-session
-O módulo express é um middleware ou seja precisamos seta-lo para o nosso
+O módulo express-session é um middleware ou seja precisamos seta-lo para o nosso
 framework faça seu uso
 
 
