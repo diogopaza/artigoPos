@@ -50,6 +50,7 @@ router.get('/retornarEstados', async function(req, res, next){
   
    estados = await retornarEstadoModel.retornarEstados()
    
+   console.log(req.params)
    res.send({estados})
   })
 

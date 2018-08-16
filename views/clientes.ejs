@@ -70,12 +70,12 @@
 <script type="text/javascript">
   
 function retornarCidades(element){
-      
-    fetch('retornarEstados')
+     // console.log(element)
+    fetch(`retornarEstados/?name=${'dfgdf'}`)
       .then(function(response){
         response.json().then(function(result){
        
-           console.log(result.estados.length)
+          // console.log(result)
             //console.log(result.estados[0].estado)
         })
 

@@ -10,18 +10,20 @@ module.exports.cadastrarEstadoModel = async function(estado, bandeira){
         {
         estado:estado,
         bandeira: bandeira,
-        cidades:[{
-            cidade:{
+        cidades:[
+            {
                    nomeCidade:'Cascavel',
-                   clientes: [
-                       { nomeCliente:'Bar', enderecoCliente:'Avenida'},
-                       {nomeCliente:'Mecanica', enderecoCliente:'CarlosGomes'}
-                   ],
+                   clientes:{ nomeCliente:'Bar', enderecoCliente:'xxxxxx'}
+                   
+            },
+            {
+                nomeCidade:'Londrina',
+                clientes:{ nomeCliente:'Igreja', enderecoCliente:'yyyyy'}
             }
         
 
         
-        }]
+        ]
     }
     ])
   

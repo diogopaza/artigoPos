@@ -306,6 +306,10 @@ Middlewares no node são funções que podem tratar os inputs e outputs das rota
 Para invocar novos middlewares no express usamos a função use
 Lembrando que a ordem que o middleware é chamado tem importância, caso você injete uma middleware na ordem errada, sua aplicação pode não responder corretamente e até parar de processador a rota corretamente.
 
+Cookies e Sessões
+
+Cookies são persistensias temporarias feitas no lado do usuário, e sessões são persistensias 
+dependentes de cookies, mas realizados no lado do servidor.
 
 
 
