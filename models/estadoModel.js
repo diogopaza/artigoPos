@@ -12,13 +12,12 @@ module.exports.cadastrarEstadoModel = async function(estado, bandeira){
         bandeira: bandeira,
         cidades:[
             {
-                   nomeCidade:'Cascavel',
-                   clientes:{ nomeCliente:'Bar', enderecoCliente:'xxxxxx'}
                    
+                   clientes:[]
             },
             {
-                nomeCidade:'Londrina',
-                clientes:{ nomeCliente:'Igreja', enderecoCliente:'yyyyy'}
+                
+                clientes:[]
             }
         
 

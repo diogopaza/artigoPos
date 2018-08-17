@@ -143,8 +143,17 @@
     var myIdBackup='';
 
     
+     fetch('/retornarEstados')
+        .then( function(response){ 
+           response.json().then(function(result){
+            console.log(result)
+           })
 
-       
+        })
+      
+            
+
+    
         function drag(evt){
            
 

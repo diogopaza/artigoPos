@@ -70,13 +70,13 @@
 <script type="text/javascript">
   
 function retornarCidades(element){
-    
+   
     fetch('retornarEstado/?estado='+element)
       .then(function(response){
         response.json().then(function(result){
        
-           console.log(result[0].estado)
-            //console.log(result.estados[0].estado)
+           console.log(result[0].cidades)
+           novoConteudo =  document.getElementById('conteudo').innerHTML = ''
         })
 
       })

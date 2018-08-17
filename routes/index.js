@@ -45,14 +45,14 @@ router.get('/retornaClientesCidades', function(req, res, next){
 
    retornaCidades.retornarCidades(req, res, next)
 })
-/*
+
 router.get('/retornarEstados', async function(req, res, next){
   
-   estados = await retornarEstadoModel.retornarEstados()
+   estados = await retornarEstadoModel.retornarEstados(req, res, next)
    
-   
+   res.send(estados)
   })
-*/
+
 
 router.get('/retornarEstado', async function(req, res, next){
   
