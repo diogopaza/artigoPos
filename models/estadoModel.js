@@ -10,19 +10,7 @@ module.exports.cadastrarEstadoModel = async function(estado, bandeira){
         {
         estado:estado,
         bandeira: bandeira,
-        cidades:[
-            {
-                   
-                   clientes:[]
-            },
-            {
-                
-                clientes:[]
-            }
-        
-
-        
-        ]
+        cidades:[]
     }
     ])
   
@@ -58,3 +46,21 @@ module.exports.retornarEstado = async function(estado){
       
     
     }
+
+
+
+    module.exports.adicionarCidade = async function(estado){
+        
+        var db = await mongo.getDbConnection()
+        collection = db.collection('estados')
+    
+        var myDocs = await collection.find({ estado: estado }).toArray()
+        collection.update( { 'estado' : 'Parana'}, { $push: { 'cidades': { 'nomeCidade': 'Cascavel'}}} )
+    
+            
+        
+          
+        
+        }
+
+    

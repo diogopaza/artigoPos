@@ -71,12 +71,12 @@
   
 function retornarCidades(element){
    
-    fetch('retornarEstado/?estado='+element)
+    fetch('retornarCidades/?estado='+element)
       .then(function(response){
-        response.json().then(function(result){
-       
-           console.log(result[0].cidades)
-           novoConteudo =  document.getElementById('conteudo').innerHTML = ''
+        response.text().then(function(result){
+            console.log(result)
+           //console.log(result[0].cidades)
+           //vbjj   jjjnjj novoConteudo =  document.getElementById('conteudo').innerHTML = ''
         })
 
       })

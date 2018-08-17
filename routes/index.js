@@ -41,10 +41,7 @@ router.post('/cadastrarCidade', function(req, res, next){
   
   })
 
-router.get('/retornaClientesCidades', function(req, res, next){
 
-   retornaCidades.retornarCidades(req, res, next)
-})
 
 router.get('/retornarEstados', async function(req, res, next){
   
@@ -58,6 +55,11 @@ router.get('/retornarEstado', async function(req, res, next){
   
     estado = await retornaClientesEstados.retornaEstado(req, res, next)
   })
+
+router.post('/retornarCidades', async function(req, res, next){
+    
+      res.send('estou retornando cidades')
+    })
 
   router.post('/autenticar',  function(req, res, next){
     
