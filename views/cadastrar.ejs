@@ -105,7 +105,8 @@
                     </div>
                      
                      <div class="selectEstados">
-                        
+                        <select id="selectEstados">
+                        </select>
                     </div>
             
             
@@ -146,7 +147,17 @@
      fetch('/retornarEstados')
         .then( function(response){ 
            response.json().then(function(result){
-            console.log(result)
+            for( estado of result ){
+                
+                var estado = document.createTextNode( estado.estado )
+                var meuLI = document.createElement('option')
+               
+                meuLI.appendChild(estado)
+                document.getElementById('selectEstados').appendChild(meuLI)    
+
+            }   
+           
+               
            })
 
         })
