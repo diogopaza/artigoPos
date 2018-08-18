@@ -49,13 +49,14 @@ module.exports.retornarEstado = async function(estado){
 
 
 
-    module.exports.adicionarCidade = async function(estado){
+    module.exports.adicionarCidade = async function(estado, bandeira){
         
         var db = await mongo.getDbConnection()
         collection = db.collection('estados')
     
         var myDocs = await collection.find({ estado: estado }).toArray()
-        collection.update( { 'estado' : 'Parana'}, { $push: { 'cidades': { 'nomeCidade': 'Cascavel'}}} )
+        collection.update( { 'estado' : estado}, { $push: { 'cidades': { 'nomeCidade': 'Umuarama',
+        'bandeira': bandeira, clientes:[] }}} )
     
             
         

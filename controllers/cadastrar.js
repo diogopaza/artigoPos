@@ -53,7 +53,7 @@ module.exports.cadastrarCidade = function( req, res,next){
         if (err) throw err
 
          meuEstado =  await estadoModel.adicionarCidade(campos.selectEstados)
-         res.send('ok')
+         res.send('Cidade Cadastrada com sucesso')
 
     })
     
